@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frrusso <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/27 17:41:35 by frrusso           #+#    #+#             */
-/*   Updated: 2022/01/27 17:45:34 by frrusso          ###   ########.fr       */
+/*   Created: 2021/12/03 11:01:24 by frrusso           #+#    #+#             */
+/*   Updated: 2021/12/17 14:00:12 by frrusso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+void	ft_putchar_fd(char c, int fd)
 {
-	(void)argv;
-	if (argc > 1)
-		return (1);
-	return (0);
+	write(fd, &c, 1);
 }
