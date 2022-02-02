@@ -16,13 +16,21 @@
 # include <unistd.h>// write read
 # include <stdlib.h>// malloc free exit
 
-typedef struct d_list
+typedef struct i_stack
 {
 	int				content;
-	struct d_list	*next;
-}					t_int;
+	struct i_stack	*next;
+}					t_stack;
 
-t_int	*ft_intnew(int content);
-void	push_swap(t_int *list);
+void	rotate(t_stack *a);
+void	rotate_rotate(t_stack *a, t_stack *b);
+void	reverse_rotate(t_stack *a);
+void	reverse_rotate_rotate(t_stack *a, t_stack *b);
+
+t_stack	*ft_intnew(int content);
+void	swap(t_stack *a);
+void	swap_swap(t_stack *a, t_stack *b);
+void	push(t_stack *a, t_stack *b);
+void	push_swap(t_stack *list);
 
 #endif

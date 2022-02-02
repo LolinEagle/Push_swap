@@ -19,16 +19,16 @@ SRCS	=	main.c push_swap.c
 
 ${NAME}:
 	${MAKE} -C ../libft
-	${CC} -o ${NAME} ${SRCS} ${LIBFT}
+	${CC} -o ${NAME} ${CFLAGS} ${SRCS} ${LIBFT}
 
 all:${NAME}
 
 clean:
 	${MAKE} clean -C ../libft
-	${RM} ${NAME}
 
 fclean:clean
 	${MAKE} fclean -C ../libft
+	${RM} ${NAME}
 
 re:fclean all
 

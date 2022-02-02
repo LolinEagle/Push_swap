@@ -13,9 +13,36 @@
 #include "../libft/libft.h"
 #include "push_swap.h"
 
-t_int	*ft_main(t_int *list, char *argv)
+int	ft_isint(int argc, char **argv)
 {
-	t_int	*list_tmp;
+	int	i;
+	int	j;
+
+	i = 1;
+	while (++i < argc)
+	{
+		j = 0;
+		if (argv[i][j])
+		{
+			if (ft_isdigit(argv[i][j]) || argv[i][j] == 43 || argv[i][j] == 45)
+				j++;
+			else
+				return (0);
+		}
+		while (argv[i][j])
+		{
+			if (ft_isdigit(argv[i][j]))
+				j++;
+			else
+				return (0);
+		}
+	}
+	return (1);
+}
+
+t_stack	*ft_main(t_stack *list, char *argv)
+{
+	t_stack	*list_tmp;
 
 	list_tmp = ft_intnew(ft_atoi(argv));
 	list->next = list_tmp;
@@ -25,24 +52,23 @@ t_int	*ft_main(t_int *list, char *argv)
 int	main(int argc, char **argv)
 {
 	int		i;
-	t_int	*first;
-	t_int	*list;
+	t_stack	*first;
+	t_stack	*list;
 
 	if (argc > 2)
 	{
-		first = ft_intnew(ft_atoi(argv[1]));
-		i = 2;
-		if (i < argc)
+		if (!ft_isint(argc, argv))
+			write(1, "Error\n", 6);
+		else
 		{
-			list = ft_main(first, argv[i]);
-			i++;
+			first = ft_intnew(ft_atoi(argv[1]));
+			i = 2;
+			if (i < argc)
+				list = ft_main(first, argv[i]);
+			while (++i < argc)
+				list = ft_main(list, argv[i]);
+			push_swap(first);
 		}
-		while (i < argc)
-		{
-			list = ft_main(list, argv[i]);
-			i++;
-		}
-		push_swap(first);
 	}
 	return (0);
 }

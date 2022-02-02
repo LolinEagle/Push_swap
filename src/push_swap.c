@@ -15,11 +15,11 @@
 
 #include <stdio.h>
 
-t_int	*ft_intnew(int content)
+t_stack	*ft_intnew(int content)
 {
-	t_int	*res;
+	t_stack	*res;
 
-	res = malloc(sizeof(t_int));
+	res = malloc(sizeof(t_stack));
 	if (!res)
 		return (NULL);
 	res->content = content;
@@ -27,32 +27,33 @@ t_int	*ft_intnew(int content)
 	return (res);
 }
 
-void	push_swap(t_int *list)
+// sa	swap a - swap the first 2 elements at the top of stack a.
+// sb	swap b - swap the first 2 elements at the top of stack b.
+void	swap(t_stack *a)
 {
-	while (list)
+	return ;
+}
+
+// ss	sa and sb at the same time.
+void	swap_swap(t_stack *a, t_stack *b)
+{
+	return ;
+}
+
+// pa	push a - take the first element at the top of b put it at the top of a.
+// pb	push b - take the first element at the top of a put it at the top of b.
+void	push(t_stack *a, t_stack *b)
+{
+	return ;
+}
+
+void	push_swap(t_stack *a)
+{
+	t_stack	*b;
+
+	while (a)
 	{
-		printf("%i\n", list->content);
-		list = list->next;
+		printf("%i\n", a->content);
+		a = a->next;
 	}
 }
-/*
-sa	swap a - swap the first 2 elements at the top of stack a.
-	Do nothing if there is only one or no elements).
-sb	swap b - swap the first 2 elements at the top of stack b.
-	Do nothing if there is only one or no elements).
-ss	sa and sb at the same time.
-pa	push a - take the first element at the top of b and put it at the top of a.
-	Do nothing if b is empty.
-pb	push b - take the first element at the top of a and put it at the top of b.
-	Do nothing if a is empty.
-ra	rotate a - shift up all elements of stack a by 1.
-	The first element becomes the last one.
-rb	rotate b - shift up all elements of stack b by 1.
-	The first element becomes the last one.
-rr	ra and rb at the same time.
-rra	reverse rotate a - shift down all elements of stack a by 1.
-	The last element becomes the first one.
-rrb	reverse rotate b - shift down all elements of stack b by 1.
-	The last element becomes the first one.
-rrr	rra and rrb at the same time.
-*/
