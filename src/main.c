@@ -44,7 +44,7 @@ t_stack	*ft_main(t_stack *list, char *argv)
 {
 	t_stack	*list_tmp;
 
-	list_tmp = ft_intnew(ft_atoi(argv));
+	list_tmp = ft_intnew(ft_atoi(argv), 'a');
 	list->next = list_tmp;
 	return (list_tmp);
 }
@@ -61,7 +61,7 @@ int	main(int argc, char **argv)
 			write(1, "Error\n", 6);
 		else
 		{
-			first = ft_intnew(ft_atoi(argv[1]));
+			first = ft_intnew(ft_atoi(argv[1]), 'a');
 			i = 2;
 			if (i < argc)
 				list = ft_main(first, argv[i]);

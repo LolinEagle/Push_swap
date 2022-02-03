@@ -15,45 +15,73 @@
 
 #include <stdio.h>
 
-t_stack	*ft_intnew(int content)
+void	print_push_swap(t_stack *a, t_stack *b)
 {
-	t_stack	*res;
+	t_stack	*c;
 
-	res = malloc(sizeof(t_stack));
-	if (!res)
-		return (NULL);
-	res->content = content;
-	res->next = NULL;
-	return (res);
+	printf("\n[a_size=%i]", ft_intsize(a));
+	c = a;
+	while (c)
+	{
+		printf("{%i}", c->content);
+		c = c->next;
+	}
+	printf("\n");
 }
 
 // sa	swap a - swap the first 2 elements at the top of stack a.
 // sb	swap b - swap the first 2 elements at the top of stack b.
 void	swap(t_stack *a)
 {
-	return ;
+	t_stack	*b;
+	
+	if (!a || a->next == NULL)
+		return ;//(a);
+	b = a;
+	a = a->next;
+	b->next = a->next;
+	a->next = b;
+	write(1, "s", 1);
+	write(1, &a->stack, 1);
+	write(1, "\n", 1);
+	//return (a);
 }
 
 // ss	sa and sb at the same time.
-void	swap_swap(t_stack *a, t_stack *b)
-{
-	return ;
-}
+// void	swap_swap(t_stack *a, t_stack *b)
+// {
+// 	return ;
+// }
 
-// pa	push a - take the first element at the top of b put it at the top of a.
-// pb	push b - take the first element at the top of a put it at the top of b.
+// pb	push b - take the first element of a put it at the top of b.
+// pa	push a - take the first element of b put it at the top of a.
 void	push(t_stack *a, t_stack *b)
 {
-	return ;
+	t_stack	*c;
+
+	if (!a)
+		return ;
+	c = a;
+	a = a->next;
+	if (c->stack == 'a')
+		c->stack = 'b';
+	else
+		c->stack = 'a';
+	c->next = b;
+	b = c;
+	write(1, "p", 1);
+	write(1, &a->stack, 1);
+	write(1, "\n", 1);
+	// return (a);
 }
 
 void	push_swap(t_stack *a)
 {
 	t_stack	*b;
 
-	while (a)
-	{
-		printf("%i\n", a->content);
-		a = a->next;
-	}
+	print_push_swap(a, b);
+	swap(a);
+	print_push_swap(a, b);
+	//push(a, b);
+	//print_push_swap(a, b);
 }

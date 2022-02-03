@@ -15,16 +15,21 @@ RM		=	rm -f
 CFLAGS	=	-Wall -Wextra -Werror
 NAME	=	push_swap
 LIBFT	=	../libft/libft.a
-SRCS	=	main.c push_swap.c	
+SRCS	=	main.c push_swap.c rotate.c ft_int.c
+OBJS =	${SRCS:.c=.o}
 
-${NAME}:
+.c.o:
+	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
+
+${NAME}:${OBJS}
 	${MAKE} -C ../libft
-	${CC} -o ${NAME} ${CFLAGS} ${SRCS} ${LIBFT}
+	${CC} -o ${NAME} ${CFLAGS} ${OBJS} ${LIBFT}
 
 all:${NAME}
 
 clean:
 	${MAKE} clean -C ../libft
+	${RM} ${OBJS}
 
 fclean:clean
 	${MAKE} fclean -C ../libft
