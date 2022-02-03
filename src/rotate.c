@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
-#include "push_swap.h"
+// #include "../libft/libft.h"
+// #include "push_swap.h"
 
 // ra	rotate a - shift up all elements of stack a by 1.
 // rb	rotate b - shift up all elements of stack b by 1.

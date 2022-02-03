@@ -41,22 +41,20 @@ int	ft_intsize(t_stack *lst)
 	return (i);
 }
 
-t_stack	*ft_intlast(t_stack *lst)
+void	ft_intadd_front(t_stack **lst)
 {
 	t_stack	*tmp;
 
-	tmp = lst;
-	if (!lst)
-		return (NULL);
-	while (tmp->next)
-		tmp = tmp->next;
-	return (tmp);
+	if (!lst[0])
+		return ;
 }
 
-void	ft_intdelone(t_stack *lst)
+void	ft_intadd_last(t_stack **lst)
 {
-	if (lst)
-		free(lst);
+	t_stack	*tmp;
+
+	if (!lst[0])
+		return ;
 }
 
 void	ft_intclear(t_stack *lst)
@@ -66,7 +64,7 @@ void	ft_intclear(t_stack *lst)
 	while (lst)
 	{
 		tmp = lst->next;
-		ft_intdelone(lst);
+		free(lst);
 		lst = tmp;
 	}
 }

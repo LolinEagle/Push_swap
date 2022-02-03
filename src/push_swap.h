@@ -26,8 +26,8 @@ typedef struct i_stack
 // ft_int.c
 t_stack	*ft_intnew(int content, char stack);
 int		ft_intsize(t_stack *lst);
-t_stack	*ft_intlast(t_stack *lst);
-void	ft_intdelone(t_stack *lst);
+void	ft_intadd_front(t_stack **lst);
+void	ft_intadd_last(t_stack **lst);
 void	ft_intclear(t_stack *lst);
 
 // rotate.c
@@ -37,6 +37,6 @@ void	reverse_rotate(t_stack *a);
 void	reverse_rotate_rotate(t_stack *a, t_stack *b);
 
 // push_swap.c
-void	push_swap(t_stack *list);
+void	push_swap(t_stack *a);
 
 #endif
