@@ -109,5 +109,15 @@ void	push_swap(t_stack *a)
 	print_push_swap(a, b);
 	push(&b, &a);
 	print_push_swap(a, b);
-	ft_intclear(a);
+	// rotate(&a);
+	// print_push_swap(a, b);
+	// rotate(&b);
+	// print_push_swap(a, b);
+	// rotate_rotate(&a, &b);
+	// print_push_swap(a, b);
+	// reverse_rotate(&a);
+	// print_push_swap(a, b);
+	// reverse_rotate(&b);
+	// print_push_swap(a, b);
+	// reverse_rotate_rotate(&a, &b);
 }

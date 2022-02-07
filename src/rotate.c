@@ -10,31 +10,44 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "../libft/libft.h"
-// #include "push_swap.h"
+#include "../libft/libft.h"
+#include "push_swap.h"
 
 // ra	rotate a - shift up all elements of stack a by 1.
 // rb	rotate b - shift up all elements of stack b by 1.
-// void	rotate(t_stack *a)
-// {
-// 	return ;
-// }
+void	rotate(t_stack **a)
+{
+    t_stack	*b;
+    t_stack	*c;
+
+	if (!a[0] || a[0]->next == NULL)
+		return ;
+	b = a[0];
+	a[0] = a[0]->next;
+	b->next = NULL;
+    while (c->next)
+		c = c->next;
+    c->next = b;
+	write(1, "r", 1);
+	write(1, &a[0]->stack, 1);
+	write(1, "\n", 1);
+}
 
 // rr	ra and rb at the same time.
-// void	rotate_rotate(t_stack *a, t_stack *b)
-// {
-// 	return ;
-// }
+void	rotate_rotate(t_stack **a, t_stack **b)
+{
+
+}
 
 // rra	reverse rotate a - shift down all elements of stack a by 1.
 // rrb	reverse rotate b - shift down all elements of stack b by 1.
-// void	reverse_rotate(t_stack *a)
-// {
-// 	return ;
-// }
+void	reverse_rotate(t_stack **a)
+{
+
+}
 
 // rrr	rra and rrb at the same time.
-// void	reverse_rotate_rotate(t_stack *a, t_stack *b)
-// {
-// 	return ;
-// }
+void	reverse_rotate_rotate(t_stack **a, t_stack **b)
+{
+
+}

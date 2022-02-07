@@ -31,12 +31,16 @@ void	ft_intadd_last(t_stack **lst);
 void	ft_intclear(t_stack *lst);
 
 // rotate.c
-void	rotate(t_stack *a);
-void	rotate_rotate(t_stack *a, t_stack *b);
-void	reverse_rotate(t_stack *a);
-void	reverse_rotate_rotate(t_stack *a, t_stack *b);
+void	rotate(t_stack **a);
+void	rotate_rotate(t_stack **a, t_stack **b);
+void	reverse_rotate(t_stack **a);
+void	reverse_rotate_rotate(t_stack **a, t_stack **b);
 
 // push_swap.c
+void	print_push_swap(t_stack *a, t_stack *b);
+void	swap(t_stack **a);
+void	swap_swap(t_stack **a, t_stack **b);
+void	push(t_stack **a, t_stack **b);
 void	push_swap(t_stack *a);
 
 #endif
