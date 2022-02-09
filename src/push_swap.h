@@ -26,8 +26,6 @@ typedef struct i_stack
 // ft_int.c
 t_stack	*ft_intnew(int content, char stack);
 int		ft_intsize(t_stack *lst);
-void	ft_intadd_front(t_stack **lst);
-void	ft_intadd_last(t_stack **lst);
 void	ft_intclear(t_stack *lst);
 
 // rotate.c

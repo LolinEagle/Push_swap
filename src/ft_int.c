@@ -41,22 +41,6 @@ int	ft_intsize(t_stack *lst)
 	return (i);
 }
 
-void	ft_intadd_front(t_stack **lst)
-{
-	t_stack	*tmp;
-
-	if (!lst[0])
-		return ;
-}
-
-void	ft_intadd_last(t_stack **lst)
-{
-	t_stack	*tmp;
-
-	if (!lst[0])
-		return ;
-}
-
 void	ft_intclear(t_stack *lst)
 {
 	t_stack	*tmp;
