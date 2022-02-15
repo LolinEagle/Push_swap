@@ -13,6 +13,34 @@
 #include "../libft/libft.h"
 #include "push_swap.h"
 
+int	ft_isbig(char *s)
+{
+	int		i;
+	char	*max;
+
+	i = 0;
+	while (s[i] && i <= 11)
+		i++;
+	if (i < 10 || (i == 10 && s[0] == 43 || s[0] == 45))
+		return (0);
+	if (i > 11 || (i == 11 && ft_isdigit(s[0])))
+		return (1);
+	if (s[0] == '-')
+		max = "2147483648";
+	else
+		max = "2147483647";
+	if (s[0] == 43 || s[0] == 45)
+		s++;
+	while (s)
+	{
+		if (*s <= *max)
+			return (1);
+		s++;
+		max++;
+	}
+	return (0);
+}
+
 int	ft_isint(int argc, char **argv)
 {
 	int	i;
@@ -36,6 +64,8 @@ int	ft_isint(int argc, char **argv)
 			else
 				return (0);
 		}
+		if (ft_isbig(argv[i]))
+			return (0);
 	}
 	return (1);
 }
@@ -76,7 +106,7 @@ int	main(int argc, char **argv)
 	if (argc > 2)
 	{
 		if (!ft_isint(argc, argv))
-			write(1, "Error\n", 6);
+			write(2, "Error\n", 6);
 		else
 		{
 			first = ft_intnew(ft_atoi(argv[1]), 'a');
@@ -88,7 +118,7 @@ int	main(int argc, char **argv)
 			if (!ft_isdup(first))
 				push_swap(first);
 			else
-				write(1, "Error\n", 6);
+				write(2, "Error\n", 6);
 		}
 	}
 	return (0);

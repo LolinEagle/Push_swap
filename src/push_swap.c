@@ -123,4 +123,5 @@ void	push_swap(t_stack *a)
 	push(&b, &a);
 	push(&b, &a);
 	print_push_swap(a, b);
+	ft_intclear(a);
 }
