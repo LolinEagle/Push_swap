@@ -40,6 +40,24 @@ int	ft_isint(int argc, char **argv)
 	return (1);
 }
 
+int	ft_isdup(t_stack *first)
+{
+	t_stack	*list;
+
+	while (first->next != NULL)
+	{
+		list = first->next;
+		while (list)
+		{
+			if (first->content == list->content)
+				return (1);
+			list = list->next;
+		}
+		first = first->next;
+	}
+	return (0);
+}
+
 t_stack	*ft_main(t_stack *list, char *argv)
 {
 	t_stack	*list_tmp;
@@ -67,7 +85,10 @@ int	main(int argc, char **argv)
 				list = ft_main(first, argv[i]);
 			while (++i < argc)
 				list = ft_main(list, argv[i]);
-			push_swap(first);
+			if (!ft_isdup(first))
+				push_swap(first);
+			else
+				write(1, "Error\n", 6);
 		}
 	}
 	return (0);

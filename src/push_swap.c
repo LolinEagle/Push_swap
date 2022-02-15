@@ -19,19 +19,25 @@ void	print_push_swap(t_stack *a, t_stack *b)
 {
 	t_stack	*c;
 
-	printf("[a_size=%i]", ft_intsize(a));
-	c = a;
-	while (c)
+	if (a)
 	{
-		printf("{%i}", c->content);
-		c = c->next;
+		printf("[a_size=%i]", ft_intsize(a));
+		c = a;
+		while (c)
+		{
+			printf("{%i}", c->content);
+			c = c->next;
+		}
 	}
-	printf("[b_size=%i]", ft_intsize(b));
-	c = b;
-	while (c)
+	if (b)
 	{
-		printf("{%i}", c->content);
-		c = c->next;
+		printf("[b_size=%i]", ft_intsize(b));
+		c = b;
+		while (c)
+		{
+			printf("{%i}", c->content);
+			c = c->next;
+		}
 	}
 	printf("\n");
 }
@@ -42,6 +48,7 @@ void	swap(t_stack **a)
 {
 	t_stack	*b;
 
+	b = NULL;
 	if (!a[0] || a[0]->next == NULL)
 		return ;
 	b = a[0];
@@ -76,10 +83,12 @@ void	swap_swap(t_stack **a, t_stack **b)
 void	push(t_stack **a, t_stack **b)
 {
 	t_stack	*c;
+	char	p;
 
 	if (!a[0])
 		return ;
 	c = a[0];
+	p = a[0]->stack;
 	a[0] = a[0]->next;
 	if (c->stack == 'a')
 		c->stack = 'b';
@@ -88,7 +97,7 @@ void	push(t_stack **a, t_stack **b)
 	c->next = b[0];
 	b[0] = c;
 	write(1, "p", 1);
-	write(1, &a[0]->stack, 1);
+	write(1, &p, 1);
 	write(1, "\n", 1);
 }
 
@@ -96,27 +105,22 @@ void	push_swap(t_stack *a)
 {
 	t_stack	*b;
 
-	b = ft_intnew(0, 'b');
-	b->next = ft_intnew(1, 'b');
-	swap(&a);
-	swap(&b);
+	b = NULL;
 	print_push_swap(a, b);
-	swap_swap(&a, &b);
+	swap(&a);
 	print_push_swap(a, b);
 	push(&a, &b);
-	print_push_swap(a, b);
-	push(&b, &a);
-	print_push_swap(a, b);
-	rotate(&a);
-	print_push_swap(a, b);
-	rotate(&b);
-	print_push_swap(a, b);
-	reverse_rotate(&a);
-	print_push_swap(a, b);
-	reverse_rotate(&b);
+	push(&a, &b);
+	push(&a, &b);
 	print_push_swap(a, b);
 	rotate_rotate(&a, &b);
 	print_push_swap(a, b);
 	reverse_rotate_rotate(&a, &b);
+	print_push_swap(a, b);
+	swap(&a);
+	print_push_swap(a, b);
+	push(&b, &a);
+	push(&b, &a);
+	push(&b, &a);
 	print_push_swap(a, b);
 }
