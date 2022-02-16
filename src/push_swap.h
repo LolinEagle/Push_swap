@@ -41,4 +41,7 @@ void	swap_swap(t_stack **a, t_stack **b);
 void	push(t_stack **a, t_stack **b);
 void	push_swap(t_stack *a);
 
+// algo.c
+void	put_low_on_top(t_stack **a, t_stack **b);
+
 #endif

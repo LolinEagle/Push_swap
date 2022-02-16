@@ -8,14 +8,14 @@
 #    Created: 2022/01/27 17:22:12 by frrusso           #+#    #+#              #
 #    Updated: 2022/01/27 17:49:55 by frrusso          ###   ########.fr        #
 #                                                                              #
-# **************************************************************************** #
+# **************s************************************************************** #
 
 CC		=	gcc
 RM		=	rm -f
 CFLAGS	=	-Wall -Wextra -Werror
 NAME	=	push_swap
 LIBFT	=	../libft/libft.a
-SRCS	=	main.c push_swap.c rotate.c ft_int.c
+SRCS	=	main.c push_swap.c rotate.c stack.c algo.c
 OBJS =	${SRCS:.c=.o}
 
 .c.o:

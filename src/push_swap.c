@@ -107,21 +107,7 @@ void	push_swap(t_stack *a)
 
 	b = NULL;
 	print_push_swap(a, b);
-	swap(&a);
-	print_push_swap(a, b);
-	push(&a, &b);
-	push(&a, &b);
-	push(&a, &b);
-	print_push_swap(a, b);
-	rotate_rotate(&a, &b);
-	print_push_swap(a, b);
-	reverse_rotate_rotate(&a, &b);
-	print_push_swap(a, b);
-	swap(&a);
-	print_push_swap(a, b);
-	push(&b, &a);
-	push(&b, &a);
-	push(&b, &a);
+	put_low_on_top(&a, &b);
 	print_push_swap(a, b);
 	ft_intclear(a);
 }

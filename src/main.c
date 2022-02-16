@@ -21,7 +21,7 @@ int	ft_isbig(char *s)
 	i = 0;
 	while (s[i] && i <= 11)
 		i++;
-	if (i < 10 || (i == 10 && s[0] == 43 || s[0] == 45))
+	if (i < 10 || (i == 10 && (s[0] == 43 || s[0] == 45)))
 		return (0);
 	if (i > 11 || (i == 11 && ft_isdigit(s[0])))
 		return (1);
