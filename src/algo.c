@@ -43,8 +43,6 @@ void	put_low_on_top(t_stack **a, t_stack **b)
 	t_stack	*tmp;
 	t_stack	*low;
 
-	if (ft_issort(a[0]))
-		return ;
 	while (a[0]->next)
 	{
 		low = a[0];
@@ -60,4 +58,43 @@ void	put_low_on_top(t_stack **a, t_stack **b)
 	}
 	while (b[0] != NULL)
 		push(b, a);
+}
+
+void	set_order(t_stack *a)
+{
+	t_stack			*tmp;
+
+	tmp = a;
+	while (tmp)
+	{
+		tmp->order = 0;
+		tmp = tmp->next;
+	}
+}
+
+void	order_a(t_stack *a)
+{
+	unsigned int	i;
+	t_stack			*tmp;
+	t_stack			*low;
+
+	set_order(a);
+	i = 0;
+	while (++i <= ft_intsize(a))
+	{
+		low = a;
+		tmp = a->next;
+		while (low->order != 0)
+		{
+			low = tmp;
+			tmp = low->next;
+		}
+		while (tmp)
+		{
+			if (low->content > tmp->content && tmp->order == 0)
+				low = tmp;
+			tmp = tmp->next;
+		}
+		low->order = i;
+	}
 }

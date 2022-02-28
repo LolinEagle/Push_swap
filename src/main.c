@@ -106,7 +106,7 @@ int	main(int argc, char **argv)
 	if (argc > 2)
 	{
 		if (!ft_isint(argc, argv))
-			write(2, "Error\n", 6);
+			ft_putendl_fd("Error", 2);
 		else
 		{
 			first = ft_intnew(ft_atoi(argv[1]), 'a');
@@ -118,7 +118,7 @@ int	main(int argc, char **argv)
 			if (!ft_isdup(first))
 				push_swap(first);
 			else
-				write(2, "Error\n", 6);
+				ft_putendl_fd("Error", 2);
 		}
 	}
 	return (0);

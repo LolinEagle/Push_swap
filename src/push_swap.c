@@ -25,7 +25,7 @@ void	print_push_swap(t_stack *a, t_stack *b)
 		c = a;
 		while (c)
 		{
-			printf("{%i}", c->content);
+			printf("{%i[%i]}", c->content, c->order);
 			c = c->next;
 		}
 	}
@@ -35,11 +35,10 @@ void	print_push_swap(t_stack *a, t_stack *b)
 		c = b;
 		while (c)
 		{
-			printf("{%i}", c->content);
+			printf("{%i[%i]}", c->content, c->order);
 			c = c->next;
 		}
 	}
-	printf("\n");
 }
 
 // sa	swap a - swap the first 2 elements at the top of stack a.
@@ -106,8 +105,11 @@ void	push_swap(t_stack *a)
 	t_stack	*b;
 
 	b = NULL;
-	print_push_swap(a, b);
-	put_low_on_top(&a, &b);
-	print_push_swap(a, b);
+	if (!ft_issort(a))
+	{
+		order_a(a);
+		ft_radix(&a, &b);
+		print_push_swap(a, b);
+	}
 	ft_intclear(a);
 }
