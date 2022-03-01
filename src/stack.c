@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_int.c                                           :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: frrusso <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -21,6 +21,7 @@ t_stack	*ft_intnew(int content, char stack)
 	if (!res)
 		return (NULL);
 	res->content = content;
+	res->order = 0;
 	res->stack = stack;
 	res->next = NULL;
 	return (res);

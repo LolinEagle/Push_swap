@@ -13,63 +13,6 @@
 #include "../libft/libft.h"
 #include "push_swap.h"
 
-int	ft_isbig(char *s)
-{
-	int		i;
-	char	*max;
-
-	i = 0;
-	while (s[i] && i <= 11)
-		i++;
-	if (i < 10 || (i == 10 && (s[0] == 43 || s[0] == 45)))
-		return (0);
-	if (i > 11 || (i == 11 && ft_isdigit(s[0])))
-		return (1);
-	if (s[0] == '-')
-		max = "2147483648";
-	else
-		max = "2147483647";
-	if (s[0] == 43 || s[0] == 45)
-		s++;
-	while (s)
-	{
-		if (*s <= *max)
-			return (1);
-		s++;
-		max++;
-	}
-	return (0);
-}
-
-int	ft_isint(int argc, char **argv)
-{
-	int	i;
-	int	j;
-
-	i = 1;
-	while (++i < argc)
-	{
-		j = 0;
-		if (argv[i][j])
-		{
-			if (ft_isdigit(argv[i][j]) || argv[i][j] == 43 || argv[i][j] == 45)
-				j++;
-			else
-				return (0);
-		}
-		while (argv[i][j])
-		{
-			if (ft_isdigit(argv[i][j]))
-				j++;
-			else
-				return (0);
-		}
-		if (ft_isbig(argv[i]))
-			return (0);
-	}
-	return (1);
-}
-
 int	ft_isdup(t_stack *first)
 {
 	t_stack	*list;
@@ -103,7 +46,7 @@ int	main(int argc, char **argv)
 	t_stack	*first;
 	t_stack	*list;
 
-	if (argc > 2)
+	if (argc > 1)
 	{
 		if (!ft_isint(argc, argv))
 			ft_putendl_fd("Error", 2);
@@ -116,10 +59,9 @@ int	main(int argc, char **argv)
 			while (++i < argc)
 				list = ft_main(list, argv[i]);
 			if (!ft_isdup(first))
-				push_swap(first);
+				push_swap(first, argc);
 			else
 				ft_putendl_fd("Error", 2);
 		}
 	}
-	return (0);
 }

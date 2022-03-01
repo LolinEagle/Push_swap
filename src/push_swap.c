@@ -100,16 +100,18 @@ void	push(t_stack **a, t_stack **b)
 	write(1, "\n", 1);
 }
 
-void	push_swap(t_stack *a)
+void	push_swap(t_stack *a, int argc)
 {
 	t_stack	*b;
 
 	b = NULL;
 	if (!ft_issort(a))
 	{
-		order_a(a);
-		ft_radix(&a, &b);
-		print_push_swap(a, b);
+		ft_order_a(a);
+		if (argc <= 13)
+			ft_put_low_on_top(&a, &b);
+		else
+			ft_radix(&a, &b);
 	}
 	ft_intclear(a);
 }

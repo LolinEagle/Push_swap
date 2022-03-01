@@ -24,61 +24,12 @@ int	ft_issort(t_stack *a)
 	return (1);
 }
 
-void	put_top_on_low(t_stack **a, t_stack *low)
-{
-	if (ft_intsize(a[0]) / 2 < ft_intsize(low))
-	{
-		while (a[0] != low)
-			rotate(a);
-	}
-	else
-	{
-		while (a[0] != low)
-			reverse_rotate(a);
-	}
-}
-
-void	put_low_on_top(t_stack **a, t_stack **b)
-{
-	t_stack	*tmp;
-	t_stack	*low;
-
-	while (a[0]->next)
-	{
-		low = a[0];
-		tmp = a[0]->next;
-		while (tmp)
-		{
-			if (low->content > tmp->content)
-				low = tmp;
-			tmp = tmp->next;
-		}
-		put_top_on_low(a, low);
-		push(a, b);
-	}
-	while (b[0] != NULL)
-		push(b, a);
-}
-
-void	set_order(t_stack *a)
-{
-	t_stack			*tmp;
-
-	tmp = a;
-	while (tmp)
-	{
-		tmp->order = 0;
-		tmp = tmp->next;
-	}
-}
-
-void	order_a(t_stack *a)
+void	ft_order_a(t_stack *a)
 {
 	unsigned int	i;
 	t_stack			*tmp;
 	t_stack			*low;
 
-	set_order(a);
 	i = 0;
 	while (++i <= ft_intsize(a))
 	{
@@ -97,4 +48,42 @@ void	order_a(t_stack *a)
 		}
 		low->order = i;
 	}
+}
+
+void	ft_put_top_on_low(t_stack **a, t_stack *low)
+{
+	if (ft_intsize(a[0]) / 2 < ft_intsize(low))
+	{
+		while (a[0] != low)
+			rotate(a);
+	}
+	else
+	{
+		while (a[0] != low)
+			reverse_rotate(a);
+	}
+}
+
+void	ft_put_low_on_top(t_stack **a, t_stack **b)
+{
+	t_stack	*tmp;
+	t_stack	*low;
+
+	while (a[0]->next && !ft_issort(a[0]))
+	{
+		if (a[0]->order > a[0]->next->order)
+			swap(a);
+		low = a[0];
+		tmp = a[0]->next;
+		while (tmp)
+		{
+			if (low->content > tmp->content)
+				low = tmp;
+			tmp = tmp->next;
+		}
+		ft_put_top_on_low(a, low);
+		push(a, b);
+	}
+	while (b[0] != NULL)
+		push(b, a);
 }

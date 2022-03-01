@@ -24,28 +24,36 @@ typedef struct i_stack
 	struct i_stack	*next;
 }					t_stack;
 
-// ft_int.c
+// ft_isint.c	3 functions
+int		ft_isbig(char *s);
+int		ft_isnewint(char *argv);
+int		ft_isint(int argc, char **argv);
+
+// stack.c		3 functions
 t_stack	*ft_intnew(int content, char stack);
 int		ft_intsize(t_stack *lst);
 void	ft_intclear(t_stack *lst);
 
-// algo.c
+// algo.c		4 functions
 int		ft_issort(t_stack *a);
-void	put_low_on_top(t_stack **a, t_stack **b);
-void	order_a(t_stack *a);
+void	ft_order_a(t_stack *a);
+void	ft_put_low_on_top(t_stack **a, t_stack **b);
 
-// radix.c
+// radix.c		1 functions
 void	ft_radix(t_stack **a, t_stack **b);
 
-// rotate.c push_swap.c
+// rotate.c 	4 functions
 void	rotate(t_stack **a);
 void	rotate_rotate(t_stack **a, t_stack **b);
 void	reverse_rotate(t_stack **a);
 void	reverse_rotate_rotate(t_stack **a, t_stack **b);
-void	print_push_swap(t_stack *a, t_stack *b);
+
+// push_swap.c	4 functions
 void	swap(t_stack **a);
 void	swap_swap(t_stack **a, t_stack **b);
 void	push(t_stack **a, t_stack **b);
-void	push_swap(t_stack *a);
+void	push_swap(t_stack *a, int argc);
+
+// main.c		3 functions
 
 #endif
