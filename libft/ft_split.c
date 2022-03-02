@@ -75,12 +75,10 @@ char	**ft_split(char const *s, char c)
 	int		j;
 	char	**res;
 
-	if (!s)
-		return (NULL);
-	res = malloc(sizeof(char *) * (ft_count(s, c) + 1));
+	res = malloc(sizeof(char *) * (ft_count(s, c) + 2));
 	if (!res)
 		return (NULL);
-	j = 0;
+	j = 1;
 	i = 0;
 	while (s[i])
 	{

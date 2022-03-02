@@ -42,14 +42,14 @@ int	ft_intsize(t_stack *lst)
 	return (i);
 }
 
-void	ft_intclear(t_stack *lst)
+void	ft_intclear(t_stack **lst)
 {
 	t_stack	*tmp;
 
-	while (lst)
+	while (lst[0])
 	{
-		tmp = lst->next;
-		free(lst);
-		lst = tmp;
+		tmp = lst[0]->next;
+		free(lst[0]);
+		lst[0] = tmp;
 	}
 }

@@ -39,6 +39,7 @@ void	print_push_swap(t_stack *a, t_stack *b)
 			c = c->next;
 		}
 	}
+	printf("\n");
 }
 
 // sa	swap a - swap the first 2 elements at the top of stack a.
@@ -113,5 +114,4 @@ void	push_swap(t_stack *a, int argc)
 		else
 			ft_radix(&a, &b);
 	}
-	ft_intclear(a);
 }

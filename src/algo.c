@@ -34,12 +34,9 @@ void	ft_order_a(t_stack *a)
 	while (++i <= ft_intsize(a))
 	{
 		low = a;
-		tmp = a->next;
 		while (low->order != 0)
-		{
-			low = tmp;
-			tmp = low->next;
-		}
+			low = low->next;
+		tmp = low->next;
 		while (tmp)
 		{
 			if (low->content > tmp->content && tmp->order == 0)
@@ -47,6 +44,12 @@ void	ft_order_a(t_stack *a)
 			tmp = tmp->next;
 		}
 		low->order = i;
+	}
+	tmp = a;
+	while (tmp)
+	{
+		tmp->order--;
+		tmp = tmp->next;
 	}
 }
 

@@ -32,7 +32,7 @@ int		ft_isint(int argc, char **argv);
 // stack.c		3 functions
 t_stack	*ft_intnew(int content, char stack);
 int		ft_intsize(t_stack *lst);
-void	ft_intclear(t_stack *lst);
+void	ft_intclear(t_stack **lst);
 
 // algo.c		4 functions
 int		ft_issort(t_stack *a);
@@ -49,11 +49,12 @@ void	reverse_rotate(t_stack **a);
 void	reverse_rotate_rotate(t_stack **a, t_stack **b);
 
 // push_swap.c	4 functions
+void	print_push_swap(t_stack *a, t_stack *b);
 void	swap(t_stack **a);
 void	swap_swap(t_stack **a, t_stack **b);
 void	push(t_stack **a, t_stack **b);
 void	push_swap(t_stack *a, int argc);
 
-// main.c		3 functions
+// main.c		4 functions
 
 #endif
