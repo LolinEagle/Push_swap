@@ -13,7 +13,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-#include "../libft/libft.h"
+# include "../libft/libft.h"
 
 typedef struct i_stack
 {
@@ -28,8 +28,9 @@ int		ft_isbig(char *s);
 int		ft_isnewint(char *argv);
 int		ft_isint(int argc, char **argv);
 
-// stack.c		3 functions
+// stack.c		4 functions
 t_stack	*ft_intnew(int content, char stack);
+t_stack	*ft_intlast(t_stack *lst);
 int		ft_intsize(t_stack *lst);
 void	ft_intclear(t_stack **lst);
 
@@ -48,7 +49,6 @@ void	reverse_rotate(t_stack **a);
 void	reverse_rotate_rotate(t_stack **a, t_stack **b);
 
 // push_swap.c	4 functions
-void	print_push_swap(t_stack *a, t_stack *b);
 void	swap(t_stack **a);
 void	swap_swap(t_stack **a, t_stack **b);
 void	push(t_stack **a, t_stack **b);

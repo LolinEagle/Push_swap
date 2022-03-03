@@ -26,6 +26,18 @@ t_stack	*ft_intnew(int content, char stack)
 	return (res);
 }
 
+t_stack	*ft_intlast(t_stack *lst)
+{
+	t_stack	*tmp;
+
+	if (!lst)
+		return (NULL);
+	tmp = lst;
+	while (tmp->next)
+		tmp = tmp->next;
+	return (tmp);
+}
+
 int	ft_intsize(t_stack *lst)
 {
 	int		i;

@@ -12,34 +12,34 @@
 
 #include "push_swap.h"
 
-#include <stdio.h>// printf
+// #include <stdio.h>// printf
 
-void	print_push_swap(t_stack *a, t_stack *b)
-{
-	t_stack	*c;
+// void	print_push_swap(t_stack *a, t_stack *b)
+// {
+// 	t_stack	*c;
 
-	if (a)
-	{
-		printf("[a_size=%i]", ft_intsize(a));
-		c = a;
-		while (c)
-		{
-			printf("{%i[%i]}", c->content, c->order);
-			c = c->next;
-		}
-	}
-	if (b)
-	{
-		printf("[b_size=%i]", ft_intsize(b));
-		c = b;
-		while (c)
-		{
-			printf("{%i[%i]}", c->content, c->order);
-			c = c->next;
-		}
-	}
-	printf("\n");
-}
+// 	if (a)
+// 	{
+// 		printf("[a_size=%i]", ft_intsize(a));
+// 		c = a;
+// 		while (c)
+// 		{
+// 			printf("{%i[%i]}", c->content, c->order);
+// 			c = c->next;
+// 		}
+// 	}
+// 	if (b)
+// 	{
+// 		printf("[b_size=%i]", ft_intsize(b));
+// 		c = b;
+// 		while (c)
+// 		{
+// 			printf("{%i[%i]}", c->content, c->order);
+// 			c = c->next;
+// 		}
+// 	}
+// 	printf("\n");
+// }
 
 // sa	swap a - swap the first 2 elements at the top of stack a.
 // sb	swap b - swap the first 2 elements at the top of stack b.
@@ -82,12 +82,10 @@ void	swap_swap(t_stack **a, t_stack **b)
 void	push(t_stack **a, t_stack **b)
 {
 	t_stack	*c;
-	char	p;
 
 	if (!a[0])
 		return ;
 	c = a[0];
-	p = a[0]->stack;
 	a[0] = a[0]->next;
 	if (c->stack == 'a')
 		c->stack = 'b';
@@ -96,7 +94,7 @@ void	push(t_stack **a, t_stack **b)
 	c->next = b[0];
 	b[0] = c;
 	write(1, "p", 1);
-	write(1, &p, 1);
+	write(1, &c->stack, 1);
 	write(1, "\n", 1);
 }
 

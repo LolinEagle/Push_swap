@@ -73,6 +73,8 @@ void	ft_put_low_on_top(t_stack **a, t_stack **b)
 
 	while (a[0]->next && !ft_issort(a[0]))
 	{
+		if (ft_issort(a[0]->next) && ft_intlast(a[0])->order < a[0]->order)
+			rotate(a);
 		if (a[0]->order > a[0]->next->order)
 			swap(a);
 		low = a[0];
