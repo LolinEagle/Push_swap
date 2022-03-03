@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "push_swap.h"
 
 void	ft_radix(t_stack **a, t_stack **b)

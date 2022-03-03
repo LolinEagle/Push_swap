@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "push_swap.h"
 
 t_stack	*ft_intnew(int content, char stack)

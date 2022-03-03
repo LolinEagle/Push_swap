@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "push_swap.h"
 
 int	ft_isdup(t_stack *first)

@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "push_swap.h"
 
 int	ft_issort(t_stack *a)
@@ -85,6 +84,8 @@ void	ft_put_low_on_top(t_stack **a, t_stack **b)
 			tmp = tmp->next;
 		}
 		ft_put_top_on_low(a, low);
+		if (ft_issort(a[0]))
+			break ;
 		push(a, b);
 	}
 	while (b[0] != NULL)

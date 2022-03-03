@@ -8,7 +8,7 @@
 #    Created: 2022/01/27 17:22:12 by frrusso           #+#    #+#              #
 #    Updated: 2022/01/27 17:49:55 by frrusso          ###   ########.fr        #
 #                                                                              #
-# **************s************************************************************** #
+# **************************************************************************** #
 
 CC		=	gcc
 RM		=	rm -f
@@ -16,7 +16,7 @@ CFLAGS	=	-Wall -Wextra -Werror
 NAME	=	push_swap
 LIBFT	=	../libft/libft.a
 SRCS	=	ft_isint.c stack.c rotate.c push_swap.c algo.c radix.c main.c
-OBJS =	${SRCS:.c=.o}
+OBJS	=	${SRCS:.c=.o}
 
 .c.o:
 	${CC} ${FLAGS} -c $< -o ${<:.c=.o}

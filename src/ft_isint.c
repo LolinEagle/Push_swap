@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft/libft.h"
 #include "push_swap.h"
 
 int	ft_isbig(char *s)
@@ -32,7 +31,7 @@ int	ft_isbig(char *s)
 	if (s[0] == 43 || s[0] == 45)
 		s++;
 	i = 11;
-	while (--i)
+	while (--i && *s >= *max)
 	{
 		if (*s > *max)
 			return (1);

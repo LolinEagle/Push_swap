@@ -13,8 +13,7 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <unistd.h>// write read
-# include <stdlib.h>// malloc free exit
+#include "../libft/libft.h"
 
 typedef struct i_stack
 {
