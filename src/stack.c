@@ -63,4 +63,5 @@ void	ft_intclear(t_stack **lst)
 		free(lst[0]);
 		lst[0] = tmp;
 	}
+	free(lst[0]);
 }

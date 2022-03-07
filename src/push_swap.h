@@ -54,6 +54,6 @@ void	swap_swap(t_stack **a, t_stack **b);
 void	push(t_stack **a, t_stack **b);
 void	push_swap(t_stack *a, int argc);
 
-// main.c		4 functions
+// main.c		5 functions
 
 #endif

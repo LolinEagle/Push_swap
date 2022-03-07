@@ -12,6 +12,21 @@
 
 #include "push_swap.h"
 
+void	ft_free(char ***argv)
+{
+	int	i;
+
+	if (argv[0])
+		return ;
+	i = 1;
+	while (argv[0][i])
+	{
+		free(argv[0][i]);
+		i++;
+	}
+	free(argv[0]);
+}
+
 int	ft_isdup(t_stack *first)
 {
 	t_stack	*list;
@@ -49,6 +64,7 @@ int	ft_parsing(int argc, char ***argv)
 		if (argv[0][1][i] == ' ')
 		{
 			argv[0] = ft_split(argv[0][1], ' ');
+			argv[0][0] = NULL;
 			i = 1;
 			while (argv[0][i])
 				i++;
@@ -56,7 +72,7 @@ int	ft_parsing(int argc, char ***argv)
 		}
 		i++;
 	}
-	return (argc);
+	return (i);
 }
 
 int	main(int argc, char **argv)
@@ -74,9 +90,8 @@ int	main(int argc, char **argv)
 		else
 		{
 			first = ft_intnew(ft_atoi(argv[1]), 'a');
-			i = 2;
-			if (i < argc)
-				list = ft_main(first, argv[i]);
+			list = first;
+			i = 1;
 			while (++i < argc)
 				list = ft_main(list, argv[i]);
 			if (!ft_isdup(first))
@@ -86,4 +101,5 @@ int	main(int argc, char **argv)
 			ft_intclear(&first);
 		}
 	}
+	ft_free(&argv);
 }
