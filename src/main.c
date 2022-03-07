@@ -6,7 +6,7 @@
 /*   By: frrusso <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 17:41:35 by frrusso           #+#    #+#             */
-/*   Updated: 2022/01/27 17:45:34 by frrusso          ###   ########.fr       */
+/*   Updated: 2022/03/07 17:36:50 by frrusso          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	ft_parsing(int argc, char ***argv)
 		}
 		i++;
 	}
-	return (i);
+	return (argc);
 }
 
 int	main(int argc, char **argv)
