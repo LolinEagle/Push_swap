@@ -106,7 +106,7 @@ void	push_swap(t_stack *a, int argc)
 	if (!ft_issort(a))
 	{
 		ft_order_a(a);
-		if (argc <= 13)
+		if (argc <= 6)
 			ft_put_low_on_top(&a, &b);
 		else
 			ft_radix(&a, &b);

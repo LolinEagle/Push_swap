@@ -23,38 +23,43 @@ typedef struct i_stack
 	struct i_stack	*next;
 }					t_stack;
 
-// ft_isint.c	3 functions
+// ft_isint.c		3 functions
 int		ft_isbig(char *s);
 int		ft_isnewint(char *argv);
 int		ft_isint(int argc, char **argv);
 
-// stack.c		4 functions
+// stack.c			4 functions
 t_stack	*ft_intnew(int content, char stack);
 t_stack	*ft_intlast(t_stack *lst);
 int		ft_intsize(t_stack *lst);
 void	ft_intclear(t_stack **lst);
 
-// algo.c		5 functions
+// algo.c			5 functions
 int		ft_issort(t_stack *a);
 int		ft_istruesort(t_stack *a, t_stack *b);
 void	ft_order_a(t_stack *a);
 void	ft_put_low_on_top(t_stack **a, t_stack **b);
 
-// radix.c		3 functions
+// radix_utils.c	3 functions
+int		ft_nopushleft(t_stack *a, int k);
+void	ft_push(t_stack **a, t_stack **b, int *i, int *z);
+void	ft_rotate(t_stack **a, t_stack **b, int *i);
+
+// radix.c			4 functions
 void	ft_radix(t_stack **a, t_stack **b);
 
-// rotate.c 	4 functions
+// rotate.c 		4 functions
 void	rotate(t_stack **a);
 void	rotate_rotate(t_stack **a, t_stack **b);
 void	reverse_rotate(t_stack **a);
 void	reverse_rotate_rotate(t_stack **a, t_stack **b);
 
-// push_swap.c	4 functions
+// push_swap.c		4 functions
 void	swap(t_stack **a);
 void	swap_swap(t_stack **a, t_stack **b);
 void	push(t_stack **a, t_stack **b);
 void	push_swap(t_stack *a, int argc);
 
-// main.c		5 functions
+// main.c			5 functions
 
 #endif
