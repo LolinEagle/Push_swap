@@ -23,6 +23,28 @@ int	ft_issort(t_stack *a)
 	return (1);
 }
 
+int	ft_istruesort(t_stack *a, t_stack *b)
+{
+	t_stack	*tmp;
+
+	tmp = b;
+	while (tmp->next)
+	{
+		if (tmp->content < tmp->next->content)
+			return (0);
+		tmp = tmp->next;
+	}
+	if (b->content > a->content)
+		return (0);
+	while (a->next)
+	{
+		if (a->content > a->next->content)
+			return (0);
+		a = a->next;
+	}
+	return (1);
+}
+
 void	ft_order_a(t_stack *a)
 {
 	unsigned int	i;

@@ -34,12 +34,13 @@ t_stack	*ft_intlast(t_stack *lst);
 int		ft_intsize(t_stack *lst);
 void	ft_intclear(t_stack **lst);
 
-// algo.c		4 functions
+// algo.c		5 functions
 int		ft_issort(t_stack *a);
+int		ft_istruesort(t_stack *a, t_stack *b);
 void	ft_order_a(t_stack *a);
 void	ft_put_low_on_top(t_stack **a, t_stack **b);
 
-// radix.c		1 functions
+// radix.c		3 functions
 void	ft_radix(t_stack **a, t_stack **b);
 
 // rotate.c 	4 functions
