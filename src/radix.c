@@ -12,76 +12,50 @@
 
 #include "push_swap.h"
 
-void	ft_radix_sort_first(t_stack **a, t_stack **b, int *i)
+void	ft_radix_sort_a(t_stack **a, t_stack **b, int k)
 {
-	int	x;
-	int	y;
+	int	i;
+	int	j;
 
-	y = ft_intsize(a[0]);
-	x = -1;
-	while (!ft_nopushleft(a[0], i[2]) && ++x < y)
+	j = ft_intsize(a[0]);
+	i = -1;
+	while (++i < j)
 	{
-		if ((a[0]->order >> i[2]) % 2 == 0)
+		if ((a[0]->order >> k) % 2 == 0)
 			push(a, b);
 		else
 			rotate(a);
 	}
-	i[0] = x;
-	i[1] = y;
 }
 
-void	ft_radix_sort_b(t_stack **a, t_stack **b, int *i)
+void	ft_radix_sort_b(t_stack **a, t_stack **b, int k)
 {
-	int	x;
-	int	y;
-	int	z;
+	int	i;
+	int	j;
 
-	z = 0;
-	y = ft_intsize(b[0]);
-	x = -1;
-	while (!ft_nopushleft(b[0], i[2]) && ++x < y)
+	j = ft_intsize(b[0]);
+	i = -1;
+	while (++i < j)
 	{
-		if ((b[0]->order >> i[2]) % 2 == 1)
-			ft_push(b, a, i, &z);
+		if ((b[0]->order >> k) % 2 == 1)
+			push(b, a);
 		else
-			ft_rotate(b, a, i);
+			rotate(b);
 	}
-	i[0] = x;
-	i[1] = y;
-}
-
-void	ft_radix_sort_a(t_stack **a, t_stack **b, int *i)
-{
-	int	x;
-	int	y;
-	int	z;
-
-	z = 0;
-	y = ft_intsize(a[0]);
-	x = -1;
-	while (!ft_nopushleft(a[0], i[2]) && ++x < y)
-	{
-		if ((a[0]->order >> i[2]) % 2 == 0)
-			ft_push(a, b, i, &z);
-		else
-			ft_rotate(a, b, i);
-	}
-	i[0] = x;
-	i[1] = y;
 }
 
 void	ft_radix(t_stack **a, t_stack **b)
 {
-	int	i[3];
+	int	k;
 
-	i[2] = 0;
+	k = 0;
 	if (!ft_issort(a[0]))
-		ft_radix_sort_first(a, b, i);
+		ft_radix_sort_a(a, b, k);
 	while (!ft_istruesort(a[0], b[0]))
 	{
-		i[2]++;
-		ft_radix_sort_b(a, b, i);
-		ft_radix_sort_a(a, b, i);
+		k++;
+		ft_radix_sort_b(a, b, k);
+		ft_radix_sort_a(a, b, k);
 	}
 	while (b[0] != NULL)
 		push(b, a);

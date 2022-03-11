@@ -15,8 +15,7 @@ RM		=	rm -f
 CFLAGS	=	-Wall -Wextra -Werror
 NAME	=	push_swap
 LIBFT	=	../libft/libft.a
-SRCS	=	ft_isint.c stack.c rotate.c push_swap.c \
-			algo.c radix.c radix_utils.c main.c
+SRCS	=	ft_isint.c stack.c rotate.c push_swap.c algo.c radix.c main.c
 OBJS	=	${SRCS:.c=.o}
 
 .c.o:
