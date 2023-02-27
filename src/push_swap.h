@@ -53,7 +53,7 @@ void	reverse_rotate_rotate(t_stack **a, t_stack **b);
 void	swap(t_stack **a);
 void	swap_swap(t_stack **a, t_stack **b);
 void	push(t_stack **a, t_stack **b);
-void	push_swap(t_stack *a, int argc);
+void	push_swap(t_stack **a, int argc);
 
 // main.c		5 functions
 

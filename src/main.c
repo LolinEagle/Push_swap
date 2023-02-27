@@ -95,7 +95,7 @@ int	main(int argc, char **argv)
 			while (++i < argc)
 				list = ft_main(list, argv[i]);
 			if (!ft_isdup(first))
-				push_swap(first, argc);
+				push_swap(&first, argc);
 			else
 				ft_putendl_fd("Error", 2);
 			ft_intclear(&first);
