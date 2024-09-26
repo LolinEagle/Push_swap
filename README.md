@@ -4,7 +4,7 @@ This project will sort data on a stack, with a limited set of instructions, usin
 ## Deployment
 To deploy this project run
 ```bash
-git clone https://github.com/LolinEagle/push_swap && cd push_swap/src && make && ./push_swap 2 1 3 4
+git clone https://github.com/LolinEagle/push_swap && cd push_swap/src && make && ./push_swap 4 3 1 2
 ```
 
 ## Arguments
